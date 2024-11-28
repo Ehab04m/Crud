@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+      <div class="w-50 mx-auto">
+        <h1 class="text-primary text-center fw-bolder my-5">Product Management System</h1>
+        <div class="form-floating mb-3">
+            <input oninput="productNameValidation()" type="text" class="form-control" id="ProName" placeholder="Product name">
+            <label for="ProName">Product Name</label>
+            <div id="nameAlert" class="alert alert-danger d-none  my-3">Product Must Start With Capital Letter</div>
+            <div id="emptyName" class="alert alert-primary d-none  my-3">Product Name Can Not Be Empty </div>
+          </div>
+          <div class="form-floating">
+            <input oninput="productPriceValidation()" type="text" class="form-control" id="ProPrice" placeholder="Product Price">
+            <label for="ProPrice">Product Price</label>
+            <div id="priceAlert" class="alert alert-danger d-none  my-3">Price Must Be From 10000 to 50000</div>
+          <div id="emptyPrice" class="alert alert-primary d-none  my-3">Product Price Can Not Be Empty </div>
+          </div>
+          
+          <div class="form-floating">
+            <input oninput="productCatValidation()" type="text" list="catlist" class="form-control" id="ProCat" placeholder="Product Category">
+            <label for="ProCat">Product Category</label>
+            <datalist id="catlist">
+                <option>Phone</option>
+                <option>TV</option>
+                <option>Electronics</option>
+                <option>Tablet</option>
+            </datalist>
+            <div id="catAlert" class="alert alert-danger d-none  my-3">Category must be included in the menue</div>
+            <div id="emptyCat" class="alert alert-primary d-none  my-3">Product Category Can Not Be Empty </div>
+            
+          </div>
+
+          <div class="form-floating">
+            <div class="form-floating">
+                <textarea oninput="productDescValidation()" class="form-control" placeholder="Product Description" id="ProDesc"></textarea>
+                <label for="ProDesc">Product Description</label>
+              </div>
+              <div id="descAlert" class="alert alert-danger d-none  my-3">Product Description Must Include 10 to 50 Character </div>
+              <div id="emptyDesc" class="alert alert-primary d-none  my-3">Product Description Can Not Be Empty </div>
+          </div>
+          <div class="form-floating">
+            <input type="file" class="form-control" id="ProImg" placeholder="Product Image">
+            <label for="ProImg">Product Image</label>
+          </div>
+          
+          <button id="addBtn" onclick="addProduct()" class="btn btn-outline-primary my-3" > Add Product</button>
+          <button id="updateBtn" onclick="updateProduct()" class="btn btn-outline-warning my-3 d-none" >Update</button>
+    </div>
+    <div class=" mx-auto mt-3  ">
+      <h1 class="fw-bolder text-primary text-center">Search Products</h1>
+      <div class="d-flex justify-content-center column-gap-5">
+        <div class="form-floating">
+          <input oninput="searchProByName()" type="search" class="form-control" id="ProSer" placeholder="Search Product By Name">
+          <label for="ProSer">Search Product By Name</label>
+        </div>
+        <div class="form-floating">
+          <input oninput="searchProByCat()" type="search" class="form-control " id="catSer" placeholder="Search Product By Category">
+          <label for="catSer">Search Product By Category</label>
+        </div>
+      </div>
+     
+      
+
+      </div>
+      <div>
+        <h1 class="fw-bolder text-primary text-center mt-5 mb-3">Avilable Products</h1>
+        <div class="row g-5" id="row">
+      </div>
+      
+    
+
+    </div>
+
+    </div>
+   
+   
+    
+  
+    <script src="java-script/main.js"></script>
+    <script src="java-script/bootstrap.bundle.min.js"></script>
+</body>
+</html>
